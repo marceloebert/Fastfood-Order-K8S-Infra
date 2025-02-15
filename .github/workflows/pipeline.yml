@@ -14,7 +14,7 @@ jobs:
     name: Deploying Infra k8s and App
     runs-on: ubuntu-latest
 
-    environment: #Define a configuração de ambiente para este job
+    environment: #Define a configuração de ambiente para este job.
       name: AWS    
 
     steps:
