@@ -3,7 +3,7 @@ variable "regionDefault" {
 }
 
 variable "projectName" {
-  default = "fastfood-order"
+  default = "fastfood"
 }
 
 variable "vpcCidr" {
