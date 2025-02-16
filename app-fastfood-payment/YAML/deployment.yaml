@@ -67,4 +67,4 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api-pod-production
+      app: api-pod-payment
