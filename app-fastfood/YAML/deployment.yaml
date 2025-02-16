@@ -18,6 +18,44 @@ spec:
           ports:
             - containerPort: 3000
           env:
+          
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config-payment
+                  key: MYSQL_URL
+
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config-payment
+                  key: MYSQL_USERNAME
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config-payment
+                  key: MYSQL_PASSWORD
+
+            - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config-payment
+                  key: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+
+            - name: SPRING_JPA_HIBERNATE_DDL-AUTO
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config-payment
+                  key: SPRING_JPA_HIBERNATE_DDL_AUTO
+
+            - name: SPRING_JPA_DATABASE-PLATFORM
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config-payment
+                  key: SPRING_JPA_DATABASE_PLATFORM                               
+
+
             - name: DYNAMODB_REGION
               valueFrom:
                 configMapKeyRef:
