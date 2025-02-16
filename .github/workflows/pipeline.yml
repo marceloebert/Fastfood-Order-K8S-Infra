@@ -94,3 +94,16 @@ jobs:
       - name: Terraform Apply - App Production
         working-directory: app-fastfood-production
         run: terraform apply -auto-approve tfplan
+        
+        # Inicializar e aplicar o Terraform para o App Payment
+      - name: Terraform Init - App Payment
+        working-directory: app-fastfood-Payment
+        run: terraform init -reconfigure
+
+      - name: Terraform Plan - App Payment
+        working-directory: app-fastfood-Payment
+        run: terraform plan -out=tfplan
+
+      - name: Terraform Apply - App Payment
+        working-directory: app-fastfood-Payment
+        run: terraform apply -auto-approve tfplan
