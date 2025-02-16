@@ -69,15 +69,28 @@ jobs:
             fi
           done
 
-      # Inicializar e aplicar o Terraform para o App
-      - name: Terraform Init - App
+      # Inicializar e aplicar o Terraform para o App Order
+      - name: Terraform Init - App Order
         working-directory: app-fastfood
         run: terraform init -reconfigure
 
-      - name: Terraform Plan - App
+      - name: Terraform Plan - App Order
         working-directory: app-fastfood
         run: terraform plan -out=tfplan
 
-      - name: Terraform Apply - App
+      - name: Terraform Apply - App Order
         working-directory: app-fastfood
+        run: terraform apply -auto-approve tfplan
+
+        # Inicializar e aplicar o Terraform para o App Production
+      - name: Terraform Init - App Production
+        working-directory: app-fastfood-Production
+        run: terraform init -reconfigure
+
+      - name: Terraform Plan - App Production
+        working-directory: app-fastfood-Production
+        run: terraform plan -out=tfplan
+
+      - name: Terraform Apply - App Production
+        working-directory: app-fastfood-Production
         run: terraform apply -auto-approve tfplan
