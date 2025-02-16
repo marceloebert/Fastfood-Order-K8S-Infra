@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: api-svc
-  name: api-loadbalancer-svc
+  name: api-production-loadbalancer-svc
   namespace: default
 spec:
   ports:
@@ -11,5 +11,5 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: api-pod
+    app: api-pod-production
   type: LoadBalancer

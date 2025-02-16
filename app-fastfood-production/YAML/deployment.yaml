@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-pod
+  name: api-pod-production
   namespace: default
   labels:
-    app: api-pod
+    app: api-pod-production
 spec:
   template:
     metadata:
-      name: api-pod
+      name: api-pod-production
       labels:
-        app: api-pod
+        app: api-pod-production
     spec:
       containers:
         - name:  c-api
@@ -67,4 +67,4 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api-pod
+      app: api-pod-production
