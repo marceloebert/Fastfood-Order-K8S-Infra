@@ -84,13 +84,13 @@ jobs:
 
         # Inicializar e aplicar o Terraform para o App Production
       - name: Terraform Init - App Production
-        working-directory: app-fastfood-Production
+        working-directory: app-fastfood-production
         run: terraform init -reconfigure
 
       - name: Terraform Plan - App Production
-        working-directory: app-fastfood-Production
+        working-directory: app-fastfood-production
         run: terraform plan -out=tfplan
 
       - name: Terraform Apply - App Production
-        working-directory: app-fastfood-Production
+        working-directory: app-fastfood-production
         run: terraform apply -auto-approve tfplan
