@@ -6,6 +6,12 @@ metadata:
   labels:
     name: db-config-payment
 data:
+  MYSQL_URL: jdbc:mysql://terraform-20250216171047441900000001.cc6lgc3nfn4u.us-east-1.rds.amazonaws.com:3306/lanchonetedb
+  MYSQL_USERNAME: sa
+  MYSQL_PASSWORD: password123
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQL8Dialect
   DYNAMODB_REGION: "us-east-1"
   AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY}
   AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_KEY}
