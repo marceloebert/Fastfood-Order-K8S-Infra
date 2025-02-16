@@ -17,29 +17,24 @@ spec:
           image: "127096271362.dkr.ecr.us-east-1.amazonaws.com/fastfood-production-api:latest"
           ports:
             - containerPort: 3002
-          env:
-            - name: DYNAMODB_REGION
-              valueFrom:
-                configMapKeyRef:
-                  name: db-config
-                  key: DYNAMODB_REGION
+          env:          
 
             - name: AWS_ACCESS_KEY_ID
               valueFrom:
                 configMapKeyRef:
-                  name: db-config
+                  name: db-config-production
                   key: AWS_ACCESS_KEY_ID
 
             - name: AWS_SECRET_ACCESS_KEY
               valueFrom:
                 configMapKeyRef:
-                  name: db-config
+                  name: db-config-production
                   key: AWS_SECRET_ACCESS_KEY
 
             - name: AWS_SESSION_TOKEN
               valueFrom:
                 configMapKeyRef:
-                  name: db-config
+                  name: db-config-production
                   key: AWS_SESSION_TOKEN           
         
           livenessProbe:
